@@ -13,6 +13,7 @@ import {useState} from 'react';
 import {View, ViewStyle} from 'react-native';
 import TimerSection from './src/components/TimerSection';
 import AddButton from './src/components/AddButton';
+import StepsList from './src/components/StepsList';
 
 const homeStyles: ViewStyle = {
   paddingHorizontal: 20,
@@ -26,6 +27,7 @@ const App = () => {
       <View style={homeStyles}>
         <TimerSection time={time} />
       </View>
+      <StepsList />
       <AddButton />
     </View>
   );
