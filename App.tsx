@@ -10,13 +10,18 @@
 
 import * as React from 'react';
 import {useState} from 'react';
-import {Text, View} from 'react-native';
+import {View, ViewStyle} from 'react-native';
 import TimerSection from './src/components/TimerSection';
+
+const homeStyles: ViewStyle = {
+  paddingHorizontal: 20,
+  paddingVertical: 4,
+};
 
 const App = () => {
   const [time, setTime] = useState(0);
   return (
-    <View>
+    <View style={homeStyles}>
       <TimerSection time={time} />
     </View>
   );
