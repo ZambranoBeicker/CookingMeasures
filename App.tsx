@@ -12,6 +12,7 @@ import * as React from 'react';
 import {useState} from 'react';
 import {View, ViewStyle} from 'react-native';
 import TimerSection from './src/components/TimerSection';
+import AddButton from './src/components/AddButton';
 
 const homeStyles: ViewStyle = {
   paddingHorizontal: 20,
@@ -21,8 +22,11 @@ const homeStyles: ViewStyle = {
 const App = () => {
   const [time, setTime] = useState(0);
   return (
-    <View style={homeStyles}>
-      <TimerSection time={time} />
+    <View style={{flex: 1}}>
+      <View style={homeStyles}>
+        <TimerSection time={time} />
+      </View>
+      <AddButton />
     </View>
   );
 };
