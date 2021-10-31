@@ -8,13 +8,16 @@
  * @format
  */
 
-import React from 'react';
+import * as React from 'react';
+import {useState} from 'react';
 import {Text, View} from 'react-native';
+import TimerSection from './src/components/TimerSection';
 
 const App = () => {
+  const [time, setTime] = useState(0);
   return (
     <View>
-      <Text>Hello</Text>
+      <TimerSection time={time} />
     </View>
   );
 };
