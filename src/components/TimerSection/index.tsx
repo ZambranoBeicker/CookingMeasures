@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
+import * as styles from './styles';
 
 type TimerSectionProps = {
   time: number;
@@ -7,8 +8,11 @@ type TimerSectionProps = {
 
 export default function TimerSection({time}: TimerSectionProps): JSX.Element {
   return (
-    <View>
-      <Text>{time}</Text>
+    <View style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Measure your time!</Text>
+      </View>
+      <Text style={styles.timerText}>{time}</Text>
     </View>
   );
 }
