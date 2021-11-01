@@ -24,15 +24,19 @@ const homeStyles: ViewStyle = {
 const App = () => {
   const [time, setTime] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [stepList, setStepList] = useState([{name: ''}]);
 
   return (
     <View style={{flex: 1}}>
       <View style={homeStyles}>
         <TimerSection time={time} />
       </View>
-      <StepsList />
+      <StepsList list={stepList} />
       {isModalOpen && (
-        <CreateStepModal setClose={() => setIsModalOpen(false)} />
+        <CreateStepModal
+          setName={name => setStepList([...stepList, {name}])}
+          setClose={() => setIsModalOpen(false)}
+        />
       )}
       <AddButton setClicked={setIsModalOpen} />
     </View>
