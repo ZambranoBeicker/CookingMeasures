@@ -15,10 +15,16 @@ export default function StepList({list}: StepListProps): JSX.Element {
     <View style={styles.container}>
       <Text style={styles.title}>Your steps list</Text>
       <View style={styles.listContainer}>
-        <View style={styles.listItem}>
-          <Text style={styles.itemText}>The first step</Text>
-          <Text style={styles.itemText}>20s</Text>
-        </View>
+        {list.map((item, index) => {
+          return (
+            <React.Fragment key={index}>
+              <View style={styles.listItem}>
+                <Text style={styles.itemText}>{item.name || 'No name'}</Text>
+                <Text style={styles.itemText}>20s</Text>
+              </View>
+            </React.Fragment>
+          );
+        })}
       </View>
     </View>
   );
