@@ -35,6 +35,7 @@ export default function CreateStepModal({
             <Pressable
               onPress={() => {
                 setClose();
+                setName(stepName);
               }}
               style={{
                 ...styles.button,
