@@ -10,6 +10,7 @@
 
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {useState} from 'react';
 import {View, ViewStyle} from 'react-native';
 import TimerSection from './src/components/TimerSection';
@@ -27,8 +28,10 @@ const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [stepList, setStepList] = useState([{name: ''}]);
 
-  return (
-    <NavigationContainer>
+  const Stack = createNativeStackNavigator();
+
+  function HomeScreen() {
+    return (
       <View style={{flex: 1}}>
         <View style={homeStyles}>
           <TimerSection time={time} />
@@ -42,6 +45,14 @@ const App = () => {
         )}
         <AddButton setClicked={setIsModalOpen} />
       </View>
+    );
+  }
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
