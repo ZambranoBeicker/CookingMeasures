@@ -9,6 +9,7 @@
  */
 
 import * as React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 import {useState} from 'react';
 import {View, ViewStyle} from 'react-native';
 import TimerSection from './src/components/TimerSection';
@@ -27,19 +28,21 @@ const App = () => {
   const [stepList, setStepList] = useState([{name: ''}]);
 
   return (
-    <View style={{flex: 1}}>
-      <View style={homeStyles}>
-        <TimerSection time={time} />
+    <NavigationContainer>
+      <View style={{flex: 1}}>
+        <View style={homeStyles}>
+          <TimerSection time={time} />
+        </View>
+        <StepsList list={stepList} />
+        {isModalOpen && (
+          <CreateStepModal
+            setName={name => setStepList([...stepList, {name}])}
+            setClose={() => setIsModalOpen(false)}
+          />
+        )}
+        <AddButton setClicked={setIsModalOpen} />
       </View>
-      <StepsList list={stepList} />
-      {isModalOpen && (
-        <CreateStepModal
-          setName={name => setStepList([...stepList, {name}])}
-          setClose={() => setIsModalOpen(false)}
-        />
-      )}
-      <AddButton setClicked={setIsModalOpen} />
-    </View>
+    </NavigationContainer>
   );
 };
 
