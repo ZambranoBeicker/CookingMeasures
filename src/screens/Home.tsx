@@ -1,25 +1,16 @@
 import * as React from 'react';
 import {useState} from 'react';
-import {View, ViewStyle} from 'react-native';
-import TimerSection from '../components/TimerSection';
-import AddButton from '../components/AddButton';
+import {View} from 'react-native';
 import StepsList from '../components/StepsList';
 import CreateStepModal from '../components/CreateStepModal';
+import AddButton from '../components/AddButton';
 
-const homeStyles: ViewStyle = {
-  paddingHorizontal: 20,
-  paddingVertical: 4,
-};
-
-export default function HomeScreen() {
-  const [time, setTime] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function Home(): JSX.Element {
   const [stepList, setStepList] = useState([{name: ''}]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <View style={{flex: 1}}>
-      <View style={homeStyles}>
-        <TimerSection time={time} />
-      </View>
       <StepsList list={stepList} />
       {isModalOpen && (
         <CreateStepModal
