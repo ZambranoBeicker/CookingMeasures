@@ -12,7 +12,7 @@ export const container: ViewStyle = {
   paddingVertical: 8,
   position: 'absolute',
   width: '100%',
-  bottom: '10%',
+  bottom: 8,
   ...commonStyles,
 };
 
@@ -22,7 +22,7 @@ export const button: ViewStyle = {
   height: buttonSize,
   paddingTop: 2,
   marginLeft: 'auto',
-  marginRight: '10%',
+  marginRight: 8,
   borderRadius: buttonSize,
   ...commonStyles,
 };
