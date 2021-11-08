@@ -13,17 +13,21 @@ export const container: ViewStyle = {
 };
 
 export const listContainer: ViewStyle = {
-  padding: 8,
-  borderColor: 'black',
-  borderWidth: 1,
+  paddingVertical: 8,
+  backgroundColor: 'white',
   borderRadius: 4,
+  overflow: 'scroll',
+  height: '85%',
 };
 
 export const listItem: ViewStyle = {
-  padding: 8,
+  paddingHorizontal: 16,
+  paddingVertical: 8,
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
+  borderBottomWidth: 1,
+  borderColor: '#6F6F6F',
 };
 export const title: TextStyle = {
   fontSize: 24,
