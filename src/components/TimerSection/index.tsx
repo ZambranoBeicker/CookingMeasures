@@ -12,7 +12,9 @@ export default function TimerSection({time}: TimerSectionProps): JSX.Element {
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Measure your time!</Text>
       </View>
-      <Text style={styles.timerText}>{time}</Text>
+      <View style={styles.timerContainer}>
+        <Text style={styles.timerText}>{time} sec</Text>
+      </View>
     </View>
   );
 }
