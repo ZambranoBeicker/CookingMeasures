@@ -20,7 +20,7 @@ export default function StepList({list}: StepListProps): JSX.Element {
             <React.Fragment key={index}>
               <View style={styles.listItem}>
                 <Text style={styles.itemText}>{item.name || 'No name'}</Text>
-                <Text style={styles.itemText}>20s</Text>
+                <Text style={styles.itemText}>20 sec</Text>
               </View>
             </React.Fragment>
           );

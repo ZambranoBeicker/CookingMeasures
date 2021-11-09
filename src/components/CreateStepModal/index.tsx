@@ -16,9 +16,9 @@ export default function CreateStepModal({
   return (
     <View style={styles.modal}>
       <View style={styles.container}>
-        <Text style={styles.title}>New Step</Text>
+        <Text style={styles.title}>Create new step</Text>
         <View>
-          <Text style={styles.label}>Name of your step</Text>
+          <Text style={styles.label}>Name</Text>
           <TextInput
             onChangeText={text => setStepName(text)}
             style={styles.input}
@@ -29,7 +29,7 @@ export default function CreateStepModal({
               onPress={() => {
                 setClose();
               }}
-              style={{...styles.button, backgroundColor: '#ca2500'}}>
+              style={{...styles.button, backgroundColor: '#C12020'}}>
               <Text style={styles.buttonText}>Cancel</Text>
             </Pressable>
             <Pressable
@@ -39,7 +39,7 @@ export default function CreateStepModal({
               }}
               style={{
                 ...styles.button,
-                backgroundColor: 'lightblue',
+                backgroundColor: 'black',
               }}>
               <Text style={styles.buttonText}>Confirm</Text>
             </Pressable>
