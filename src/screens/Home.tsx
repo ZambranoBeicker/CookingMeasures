@@ -18,7 +18,7 @@ export default function Home(): JSX.Element {
           setClose={() => setIsModalOpen(false)}
         />
       )}
-      <AddButton setClicked={setIsModalOpen} />
+      {!isModalOpen && <AddButton setClicked={setIsModalOpen} />}
     </View>
   );
 }
