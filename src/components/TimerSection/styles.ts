@@ -1,16 +1,17 @@
 import {ViewStyle, TextStyle} from 'react-native';
 
 export const container: ViewStyle = {
-  borderBottomColor: '#0002',
-  borderBottomWidth: 1,
-
   padding: 8,
 };
 
+export const timerContainer: ViewStyle = {
+  backgroundColor: 'white',
+  paddingVertical: 8,
+};
 export const timerText: TextStyle = {
-  fontSize: 18,
-  fontWeight: 'bold',
+  fontSize: 20,
   textAlign: 'center',
+  color: 'black',
 };
 
 export const titleContainer: ViewStyle = {

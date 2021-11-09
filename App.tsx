@@ -11,10 +11,10 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {View, Text} from 'react-native';
 import Default from './src/layout/Default';
 import Timer from './src/screens/Timer';
 import Home from './src/screens/Home';
+import VectorImage from 'react-native-vector-image';
 
 const App = () => {
   const Tabs = createBottomTabNavigator();
@@ -35,8 +35,32 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tabs.Navigator>
-        <Tabs.Screen name="Home" component={screens.Home} />
-        <Tabs.Screen name="Timer" component={screens.Timer} />
+        <Tabs.Screen
+          options={{
+            tabBarHideOnKeyboard: true,
+            tabBarIcon: () => (
+              <VectorImage
+                source={require('./src/assets/home_icon.svg')}
+                style={{marginTop: 10}}
+              />
+            ),
+          }}
+          name="Home"
+          component={screens.Home}
+        />
+        <Tabs.Screen
+          options={{
+            tabBarHideOnKeyboard: true,
+            tabBarIcon: () => (
+              <VectorImage
+                source={require('./src/assets/timer_icon.svg')}
+                style={{marginTop: 12, height: 16, width: 16}}
+              />
+            ),
+          }}
+          name="Timer"
+          component={screens.Timer}
+        />
       </Tabs.Navigator>
     </NavigationContainer>
   );

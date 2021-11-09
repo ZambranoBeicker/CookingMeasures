@@ -14,7 +14,6 @@ const commonStyles: ViewStyle = {
 const buttonSize: number = 50;
 
 export const container: ViewStyle = {
-  marginTop: '50%',
   paddingVertical: 20,
   paddingHorizontal: 8,
   width: '85%',
@@ -33,6 +32,8 @@ export const modal: ViewStyle = {
   right: 0,
   left: 0,
   backgroundColor: '#0005',
+  display: 'flex',
+  justifyContent: 'flex-end',
 };
 
 export const input: ViewStyle = {
@@ -49,20 +50,21 @@ export const button: ViewStyle = {
   paddingVertical: 8,
   paddingHorizontal: 20,
   marginHorizontal: 4,
-  borderRadius: 8,
+  borderRadius: 4,
 };
 
 export const buttonContainer: ViewStyle = {
   marginTop: 16,
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'flex-end',
+  justifyContent: 'space-between',
 };
 export const label: TextStyle = {
   marginBottom: 8,
 };
 export const title: TextStyle = {
-  fontSize: 32,
+  fontSize: 24,
   textAlign: 'center',
   marginBottom: 24,
+  fontWeight: 'bold',
 };

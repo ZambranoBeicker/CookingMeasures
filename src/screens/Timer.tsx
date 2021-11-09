@@ -2,6 +2,7 @@ import * as React from 'react';
 import {useState} from 'react';
 import {View, ViewStyle} from 'react-native';
 import TimerSection from '../components/TimerSection';
+import StepsList from '../components/StepsList';
 
 const homeStyles: ViewStyle = {
   paddingHorizontal: 20,
@@ -14,6 +15,7 @@ export default function Timer() {
     <View style={{flex: 1}}>
       <View style={homeStyles}>
         <TimerSection time={time} />
+        <StepsList list={[{name: ''}]} />
       </View>
     </View>
   );
