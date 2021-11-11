@@ -37,6 +37,7 @@ const App = () => {
       <Tabs.Navigator>
         <Tabs.Screen
           options={{
+            tabBarHideOnKeyboard: true,
             tabBarIcon: () => (
               <VectorImage
                 source={require('./src/assets/home_icon.svg')}
@@ -49,6 +50,7 @@ const App = () => {
         />
         <Tabs.Screen
           options={{
+            tabBarHideOnKeyboard: true,
             tabBarIcon: () => (
               <VectorImage
                 source={require('./src/assets/timer_icon.svg')}
