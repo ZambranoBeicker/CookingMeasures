@@ -22,6 +22,18 @@ export default function Timer() {
     justifyContent: 'space-between',
     height: '86%',
   };
+
+  const handleStart: (prevState: TimerStateType) => void = prevState => {
+    setTimerState('start');
+  };
+
+  useEffect(() => {
+    if (timerState === 'start') {
+      setTimeout(() => {
+        setTime(time + 1);
+      }, 1000);
+    }
+  });
   return (
     <View style={{flex: 1}}>
       <View style={homeStyles}>
