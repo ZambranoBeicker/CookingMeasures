@@ -42,9 +42,9 @@ export default function Timer() {
           <View style={tasksContainerStyles}>
             <StepsList list={[{name: ''}]} />
             <TimerButtons
-              setPause={() => setPause(!pause)}
-              setStart={() => setStart(!start)}
-              setFinish={() => setFinish(!finish)}
+              setPause={() => setTimerState('paused')}
+              setStart={() => handleStart(timerState)}
+              setFinish={() => setTimerState('finished')}
             />
           </View>
         </View>
