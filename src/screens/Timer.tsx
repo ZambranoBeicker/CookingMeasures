@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {View, ViewStyle} from 'react-native';
 import TimerSection from '../components/TimerSection';
 import StepsList from '../components/StepsList';
@@ -10,11 +10,11 @@ const homeStyles: ViewStyle = {
   paddingVertical: 4,
 };
 
+type TimerStateType = 'inital' | 'paused' | 'finished' | 'start';
+
 export default function Timer() {
   const [time, setTime] = useState(0);
-  const [pause, setPause] = useState(false);
-  const [start, setStart] = useState(false);
-  const [finish, setFinish] = useState(false);
+  const [timerState, setTimerState] = useState<TimerStateType>('inital');
 
   const tasksContainerStyles: ViewStyle = {
     display: 'flex',
