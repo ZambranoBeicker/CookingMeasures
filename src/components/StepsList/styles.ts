@@ -1,11 +1,5 @@
 import {ViewStyle, TextStyle} from 'react-native';
 
-const commonStyles: ViewStyle = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-};
-
 const buttonSize: number = 50;
 
 export const container: ViewStyle = {
@@ -17,7 +11,6 @@ export const listContainer: ViewStyle = {
   backgroundColor: 'white',
   borderRadius: 4,
   overflow: 'scroll',
-  height: '85%',
 };
 
 export const listItem: ViewStyle = {
