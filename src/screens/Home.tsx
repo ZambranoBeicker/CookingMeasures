@@ -6,7 +6,7 @@ import CreateStepModal from '../components/CreateStepModal';
 import AddButton from '../components/AddButton';
 
 export default function Home(): JSX.Element {
-  const [stepList, setStepList] = useState([{name: ''}]);
+  const [stepList, setStepList] = useState<{name: string}[] | []>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const list = stepList[0].name === '' ? [] : stepList;
