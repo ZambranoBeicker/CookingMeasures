@@ -12,7 +12,6 @@ type StepListProps = {
 };
 
 export default function StepList({list}: StepListProps): JSX.Element {
-  console.log(list.length);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Your steps list</Text>
