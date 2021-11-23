@@ -12,7 +12,6 @@ type StepListProps = {
 };
 
 export default function StepList({list}: StepListProps): JSX.Element {
-  console.log(list.length);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Your steps list</Text>
@@ -24,7 +23,7 @@ export default function StepList({list}: StepListProps): JSX.Element {
             return (
               <React.Fragment key={index}>
                 <View style={styles.listItem}>
-                  <Text style={styles.itemText}>{item.name || 'No name'}</Text>
+                  <Text style={styles.itemText}>{item.name}</Text>
                   <Text style={styles.itemText}>20 sec</Text>
                 </View>
               </React.Fragment>
