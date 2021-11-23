@@ -42,7 +42,7 @@ export default function Timer() {
         <TimerSection time={time} />
         <View style={{display: 'flex', flexDirection: 'column'}}>
           <View style={tasksContainerStyles}>
-            <StepsList list={[{name: ''}]} />
+            <StepsList list={[]} />
             <TimerButtons
               setPause={() => setTimerState('paused')}
               setStart={() => handleStart(timerState)}

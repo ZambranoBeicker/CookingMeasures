@@ -9,9 +9,11 @@ export default function Home(): JSX.Element {
   const [stepList, setStepList] = useState([{name: ''}]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const list = stepList[0].name === '' ? [] : stepList;
+
   return (
     <View style={{flex: 1}}>
-      <StepsList list={stepList} />
+      <StepsList list={list} />
       {isModalOpen && (
         <CreateStepModal
           setName={name => setStepList([...stepList, {name}])}
