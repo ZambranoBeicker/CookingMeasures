@@ -29,11 +29,13 @@ export default function Timer() {
 
   useEffect(() => {
     if (timerState === 'start') {
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         setTime(time + 1);
       }, 1000);
+      return () => clearTimeout(timeoutId);
     }
   });
+
   return (
     <View style={{flex: 1}}>
       <View style={homeStyles}>
