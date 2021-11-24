@@ -18,7 +18,7 @@ export default function Home(): JSX.Element {
 
   return (
     <View style={{flex: 1}}>
-      <StepsList list={stepList} />
+      <StepsList list={state.tasks} />
       {isModalOpen && (
         <CreateStepModal
           setName={handleTaskCreation}
