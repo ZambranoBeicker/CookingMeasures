@@ -9,6 +9,8 @@ import {addTask, tasksSelector} from '../reducers/tasksSlice';
 
 export default function Home(): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const state = useSelector(tasksSelector);
+  const dispatch = useDispatch();
 
   const handleTaskCreation: (name: string) => void = (name: string) => {
     setStepList([...stepList, {name}]);
