@@ -13,7 +13,7 @@ export default function Home(): JSX.Element {
   const dispatch = useDispatch();
 
   const handleTaskCreation: (name: string) => void = (name: string) => {
-    setStepList([...stepList, {name}]);
+    dispatch(addTask(name));
   };
 
   return (
