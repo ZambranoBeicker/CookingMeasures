@@ -4,6 +4,8 @@ import {View, ViewStyle} from 'react-native';
 import TimerSection from '../components/TimerSection';
 import StepsList from '../components/StepsList';
 import TimerButtons from '../components/TimerButtons';
+import {tasksSelector} from '../reducers/tasksSlice';
+import {useSelector} from 'react-redux';
 
 const homeStyles: ViewStyle = {
   paddingHorizontal: 20,
@@ -15,6 +17,7 @@ type TimerStateType = 'inital' | 'paused' | 'finished' | 'start';
 export default function Timer() {
   const [time, setTime] = useState(0);
   const [timerState, setTimerState] = useState<TimerStateType>('inital');
+  const {tasks} = useSelector(tasksSelector);
 
   const tasksContainerStyles: ViewStyle = {
     display: 'flex',
@@ -42,7 +45,7 @@ export default function Timer() {
         <TimerSection time={time} />
         <View style={{display: 'flex', flexDirection: 'column'}}>
           <View style={tasksContainerStyles}>
-            <StepsList list={[]} />
+            <StepsList list={tasks} />
             <TimerButtons
               setPause={() => setTimerState('paused')}
               setStart={() => handleStart(timerState)}
