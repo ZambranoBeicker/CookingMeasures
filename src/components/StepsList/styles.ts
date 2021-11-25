@@ -4,13 +4,13 @@ const buttonSize: number = 50;
 
 export const container: ViewStyle = {
   padding: 8,
+  maxHeight: '85%',
 };
 
 export const listContainer: ViewStyle = {
   paddingVertical: 8,
   backgroundColor: 'white',
   borderRadius: 4,
-  overflow: 'scroll',
 };
 
 export const listItem: ViewStyle = {
