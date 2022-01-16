@@ -1,16 +1,12 @@
 import * as React from 'react';
-import {Text, View, ScrollView, ViewStyle} from 'react-native/';
+import {Text, View} from 'react-native/';
 import * as styles from './styles';
-import DefaultMessage from './DefaultMessage';
 import {isArrayEmpty} from '../../services';
-
-interface list {
-  name: string;
-  id: number;
-}
+import {TaskSchema} from '../../interfaces';
+import TasksView, {DefaultMessage, TasksIterator} from '../TasksView';
 
 type StepListProps = {
-  list: list[];
+  list: TaskSchema[];
   measureId?: number;
 };
 
@@ -21,29 +17,10 @@ export default function StepList({
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Your steps list</Text>
-      <ScrollView>
-        <View style={styles.listContainer}>
-          {isArrayEmpty(list) ? (
-            <DefaultMessage />
-          ) : (
-            list.map((item, index) => {
-              const measureStyles: ViewStyle =
-                measureId === item.id
-                  ? {borderColor: 'black', borderWidth: 3, borderBottomWidth: 3}
-                  : {};
-
-              return (
-                <React.Fragment key={index}>
-                  <View style={{...styles.listItem, ...measureStyles}}>
-                    <Text style={styles.itemText}>{item.name}</Text>
-                    <Text style={styles.itemText}>20 sec</Text>
-                  </View>
-                </React.Fragment>
-              );
-            })
-          )}
-        </View>
-      </ScrollView>
+      <TasksView areTasksEmpty={isArrayEmpty(list)}>
+        <DefaultMessage />
+        <TasksIterator list={list} measureId={measureId} />
+      </TasksView>
     </View>
   );
 }
