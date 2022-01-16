@@ -17,6 +17,8 @@ type TimerStateType = 'inital' | 'paused' | 'finished' | 'start';
 export default function Timer() {
   const [time, setTime] = useState(0);
   const [timerState, setTimerState] = useState<TimerStateType>('inital');
+  const [measuring, setMeasuring] = useState(0);
+
   const {tasks} = useSelector(tasksSelector);
 
   const tasksContainerStyles: ViewStyle = {
@@ -26,7 +28,19 @@ export default function Timer() {
     height: '86%',
   };
 
-  const handleStart: (prevState: TimerStateType) => void = prevState => {
+  const handleFinish = (): void => {
+    if (measuring + 1 <= tasks.length) {
+      setMeasuring(measuring + 1);
+    }
+
+    if (measuring + 1 === tasks.length) {
+      setTime(0);
+      setMeasuring(0);
+    }
+
+    setTimerState('finished');
+  };
+  const handleStart = (): void => {
     setTimerState('start');
   };
 
@@ -39,17 +53,22 @@ export default function Timer() {
     }
   });
 
+  useEffect(() => {
+    console.log('this is measuring: ', measuring);
+    console.log('this is time: ', time);
+  }, [measuring]);
+
   return (
     <View style={{flex: 1}}>
       <View style={homeStyles}>
         <TimerSection time={time} />
         <View style={{display: 'flex', flexDirection: 'column'}}>
           <View style={tasksContainerStyles}>
-            <StepsList list={tasks} />
+            <StepsList measureId={measuring} list={tasks} />
             <TimerButtons
               setPause={() => setTimerState('paused')}
               setStart={() => handleStart(timerState)}
-              setFinish={() => setTimerState('finished')}
+              setFinish={() => handleFinish(timerState)}
             />
           </View>
         </View>

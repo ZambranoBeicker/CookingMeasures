@@ -1,7 +1,10 @@
-import {createSlice, CaseReducer, PayloadAction} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from '../store';
 
-type State = {name: string};
+type State = {
+  name: string;
+  id: number;
+};
 
 type AppState = {
   tasks: State[];
@@ -20,6 +23,7 @@ export const tasksSlice = createSlice({
         ...state.tasks,
         {
           name: action.payload,
+          id: state.tasks.length,
         },
       ];
     },
